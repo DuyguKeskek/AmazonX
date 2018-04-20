@@ -1,0 +1,71 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">Amazon<span>X</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            {{ cartList.length }}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3">
+      <h3 class="my-4">Trending Now</h3>
+      <div class="list-group">
+        <div *ngFor = "let category of categoryList">
+          <a href="#" (click)="selectedCategory(category.name)" class="list-group-item">{{category}}</a>
+        </div>
+         <a class="nav-link" (click)="selectedCategory('Book')" href="#" class="list-group-item">Book</a>
+         <a class="nav-link" (click)="selectedCategory('Tech')" href="#" class="list-group-item">Tech</a>
+         <a class="nav-link" (click)="selectedCategory('Music')" href="#" class="list-group-item">Music</a>
+      </div>
+    </div>
+    <!-- /.col-lg-3 -->
+
+    <div class="col-lg-9">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4" *ngFor="let product of productList | searchfilter: 'category': selectedCat">
+          <div class="card">
+            <a href="#"><img class="card-img-top" src="https://bit.ly/2qNwW2f" alt="macbook"></a>
+            <div class="card-body">
+              <p class="card-title">
+                <a href="#">{{ product.name }}</a>
+              </p>
+              <h6>{{ product.category }}</h6>
+              <h5>$ {{ product.price }}</h5>                          
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+            </div>
+            <a href="#" class="btn btn-success" (click)="addCart(product)"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Add to Cart</a>
+            <div class="card-footer">
+              <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.col-lg-9 -->
+  </div>
+  <!-- /.row -->
+
+</div>
+<!-- /.container -->
+
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+  <div class="container">
+    <p class="m-0 text-center text-white">Copyright &copy; AmazonX by Duygu</p>
+  </div>
+  <!-- /.container -->
+</footer>
+

@@ -1,0 +1,58 @@
+/* You can add global styles to this file, and also import other style files */
+  body {
+    padding-top: 54px;
+    background-color: #82B1FF;
+  }
+  .card-title a {
+    color: #444;
+    font-size: 18px;
+  }
+  .card-title a:hover {
+    color: black;
+    text-decoration: none;
+  }
+  .list-group a {
+    color: #444 !important;
+  }
+  .navbar-brand span {
+    font-weight: bold;
+    color: #FF3D00;
+  }
+  .row {
+      margin-top: 2rem;
+  }
+  .card {
+    height: auto !important;
+  }
+  .card-body {
+      height: 40%;
+  }
+  .card h5, h6 {
+    display: inline-block;
+  }
+  .card h5 {
+    float: right;
+    font-weight: bold;
+  }
+  .card-text {
+    width: 100% !important;
+  }
+  p {
+    margin-top: 5% !important;
+  }
+  .btn {
+    border-radius: 0px !important;
+  }
+  .fa {
+    padding-right: .5rem;
+  }
+  @media (min-width: 992px) {
+    body {
+      padding-top: 56px;
+    }
+  }
+  @media (max-width: 992px) {
+    .card-body {
+        height: auto;
+    }
+  }
